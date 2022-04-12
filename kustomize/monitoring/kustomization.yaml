@@ -9,8 +9,6 @@ resources:
   - alertmanager-config.yaml
   - alertmanager-rules-config.yaml
   - grafana-datasources.yaml
-# secrets
-  - grafana-secret.yaml
 # RBAC
   - rbac-sa.yaml
   - rbac-cr.yaml
