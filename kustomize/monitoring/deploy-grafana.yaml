@@ -37,6 +37,26 @@ spec:
           value: crunchy-prometheus
         - name: PROM_PORT
           value: "9090"
+        - name: GF_SERVER_ROOT_URL
+          valueFrom: {configMapKeyRef: {name: "grafana-config", key: "server-root_url"}}
+        - name: GF_SMTP_ENABLED
+          value: "true"
+        - name: GF_SMTP_HOST
+          valueFrom: {configMapKeyRef: {name: "grafana-config", key: "smtp-host"}}
+        - name: GF_SMTP_USER
+          valueFrom: {secretKeyRef: {name: "grafana-smtp", key: "user"}}
+        - name: GF_SMTP_PASSWORD
+          valueFrom: {secretKeyRef: {name: "grafana-smtp", key: "password"}}
+        - name: GF_SMTP_FROM_ADDRESS
+          value: "no-reply@skillstream.co.uk"
+        - name: GF_AUTH_GOOGLE_ENABLED
+          value: "true"
+        - name: GF_AUTH_GOOGLE_ALLOW_SIGN_UP
+          value: "false"
+        - name: GF_AUTH_GOOGLE_CLIENT_ID
+          valueFrom: {secretKeyRef: {name: grafana-google, key: client-id}}
+        - name: GF_AUTH_GOOGLE_CLIENT_SECRET
+          valueFrom: {secretKeyRef: {name: grafana-google, key: client-secret}}
         image: grafana/grafana:7.4.5
         imagePullPolicy: IfNotPresent
         livenessProbe:
