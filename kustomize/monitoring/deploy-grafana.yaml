@@ -52,7 +52,7 @@ spec:
         - name: GF_AUTH_GOOGLE_ENABLED
           value: "true"
         - name: GF_AUTH_GOOGLE_ALLOW_SIGN_UP
-          value: "false"
+          value: "true"
         - name: GF_AUTH_GOOGLE_CLIENT_ID
           valueFrom: {secretKeyRef: {name: grafana-google, key: client-id}}
         - name: GF_AUTH_GOOGLE_CLIENT_SECRET
