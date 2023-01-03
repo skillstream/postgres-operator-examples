@@ -57,7 +57,7 @@ spec:
           valueFrom: {secretKeyRef: {name: grafana-google, key: client-id}}
         - name: GF_AUTH_GOOGLE_CLIENT_SECRET
           valueFrom: {secretKeyRef: {name: grafana-google, key: client-secret}}
-        image: grafana/grafana:7.4.5
+        image: grafana/grafana:8.5.10
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
