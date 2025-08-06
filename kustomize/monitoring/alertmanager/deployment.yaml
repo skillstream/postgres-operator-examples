@@ -28,8 +28,7 @@ spec:
             port: 9093
         resources:
           requests:
-            cpu: 10m
-            memory: 50Mi
+            cpu: 1m
           limits:
             cpu: 50m
             memory: 100Mi

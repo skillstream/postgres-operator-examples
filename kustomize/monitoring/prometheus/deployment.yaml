@@ -23,11 +23,10 @@ spec:
             port: 9090
         resources:
           requests:
-            cpu: 10m
-            memory: 200Mi
+            cpu: 20m
           limits:
-            cpu: 50m
-            memory: 400Mi
+            cpu: 200m
+            memory: 500Mi
         volumeMounts:
         - mountPath: /etc/prometheus
           name: prometheusconf
